@@ -1,7 +1,7 @@
 //import { XMLParser } from "fast-xml-parser";
 
 // Using local help folder in public directory
-const HELP_BASE_URL = "../../help"; // Local path to help folder in public directory
+const HELP_BASE_URL = "/help"; // Local path to help folder in public directory
 const CONFIG_URL = `${HELP_BASE_URL}/config.json`; // URL to version config file
 
 let cachedVersion = "v1"; // Default version
