@@ -1,0 +1,68 @@
+/* Improve spacing for section headings */
+.markdown h2 {
+    font-size: 1.8rem;  /* Increase size for better differentiation */
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ddd; /* Adds subtle separation */
+    padding-bottom: 5px;
+  }
+  
+  /* Improve subheadings (###) styling */
+  .markdown h3 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  /* Improve list readability */
+  .markdown ul, .markdown ol {
+    margin-left: 25px;
+    padding-left: 20px;
+    line-height: 1.6;
+  }
+  
+  /* Improve bold text styling */
+  .markdown strong {
+    font-weight: bold;
+    color: #333; /* Ensure bold stands out */
+  }
+  
+  /* Add spacing for paragraphs */
+  .markdown p {
+    margin-bottom: 15px;
+  }
+  
+  /* Improve image spacing */
+  .markdown img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 5px; /* Slight rounded corners for better look */
+  }
+  
+  /* Default images */
+.defaultImage {
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    display: block;
+  }
+  
+  /* Style screenshots differently (e.g., larger, border) */
+  .screenshot {
+    max-width: 50%;
+    border: 2px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    background: #f9f9f9;
+  }
+  
+  /* Style icons differently (e.g., smaller, inline) */
+  .icon {
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
