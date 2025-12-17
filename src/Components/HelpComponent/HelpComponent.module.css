@@ -1,72 +1,145 @@
-/* Improve spacing for section headings */
-.markdown h2 {
-  font-size: 1.8rem;
-  /* Increase size for better differentiation */
-  font-weight: bold;
-  margin-bottom: 15px;
-  border-bottom: 2px solid #ddd;
-  /* Adds subtle separation */
-  padding-bottom: 5px;
+/* ---- Container / gutters ---- */
+.helpContainer {
+  max-width: 1120px;           /* Polaris content widths tend to be ~1080–1200px */
+  margin: 0 auto;
+  padding-inline: 16px;        /* small gutter on narrow screens */
 }
 
-/* Improve subheadings (###) styling */
-.markdown h3 {
-  font-size: 1.4rem;
-  font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 10px;
+/* Header row for each section (title + button) */
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  min-width: 0; /* Prevent flex from expanding beyond container */
+}
+.sectionHeader .title {
+  flex: 1;
+  min-width: 0; /* Allow title to shrink if needed */
+  text-align: left;
+}
+.sectionHeader .title h2 {
+  text-align: left;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
-/* Improve list readability */
-.markdown ul,
-.markdown ol {
-  margin-left: 25px;
-  padding-left: 20px;
-  line-height: 1.6;
+/* Expand/collapse button */
+.expandButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
 }
 
-/* Improve bold text styling */
-.markdown strong {
-  font-weight: bold;
-  color: #333;
-  /* Ensure bold stands out */
+.expandButton:hover {
+  background-color: var(--p-color-bg-surface-hover, rgba(0, 0, 0, 0.05));
 }
 
-/* Add spacing for paragraphs */
-.markdown p {
-  margin-bottom: 15px;
+.expandButton:focus {
+  outline: 2px solid var(--p-color-border-focus, #5e6ad2);
+  outline-offset: 2px;
 }
 
-/* Improve image spacing */
-.markdown img {
-  max-width: 100%;
-  height: auto;
-  margin: 10px 0;
-  border-radius: 5px;
-  /* Slight rounded corners for better look */
-}
-
-/* Default images */
-.defaultImage {
-  max-width: 100%;
-  height: auto;
-  margin: 20px auto;
-  display: block;
-}
-
-/* Style screenshots differently (e.g., larger, border) */
-.screenshot {
-  max-width: 50%;
-  border: 2px solid #ddd;
-  padding: 10px;
-  border-radius: 5px;
-  background: #f9f9f9;
-}
-
-/* Style icons differently (e.g., smaller, inline) */
-.icon {
-  width: 40px;
-  height: 40px;
+/* Arrow icon for expand/collapse */
+.arrowIcon {
   display: inline-block;
-  vertical-align: middle;
+  transition: transform 0.2s ease;
+  font-size: 0.75em;
+  line-height: 1;
 }
+
+.arrowOpen {
+  transform: rotate(90deg);
+}
+
+/* ---- Markdown / readability ---- */
+.markdown {
+  padding: 16px;
+  overflow-x: auto;
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0; /* Prevent expansion beyond parent */
+}
+
+/* Limit paragraph and list line length for readability */
+.markdown p,
+.markdown li,
+.markdown ul,
+.markdown ol,
+.markdown blockquote {
+  max-width: 85ch;             /* comfortable reading measure */
+  text-align: left;
+}
+
+/* Headings */
+.markdown h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin: 12px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--p-color-border-subdued, #e5e7eb);
+  text-align: left;
+}
+
+/* Subheadings */
+.markdown h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 18px 0 8px;
+  text-align: left;
+}
+
+/* ---- Images ---- */
+.markdown img,
+.defaultImage {
+  display: block;
+  max-width: min(900px, 100%); /* never exceed ~900px and stay responsive */
+  height: auto;
+  margin: 16px auto;           /* center images */
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 8px 24px rgba(0,0,0,.06);
+}
+
+/* Screenshots slightly smaller by default */
+.screenshot {
+  max-width: min(720px, 100%);
+  border: 1px solid var(--p-color-border-subdued, #e5e7eb);
+  background: #fafafa;
+}
+
+/* ---- Tables ---- */
+.markdown table {
+  width: 100%;
+  max-width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  margin: 12px 0 20px;
+  overflow-wrap: break-word;
+}
+.markdown th,
+.markdown td {
+  text-align: left;
+  vertical-align: top;
+  padding: 6px 10px; /* a touch tighter than before */
+  border-top: 1px solid var(--p-color-border-subdued, #e5e7eb);
+}
+.markdown th {
+  white-space: normal !important;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+.markdown tbody tr:nth-child(even) td {
+  background: #fbfbfb;
+}
+
+/* ---- Polaris-like collapsible (you already have) ---- */
+.markdown details.lf-polaris-details { /* unchanged – keep if still used anywhere */ }
+
+/* (your other existing rules can remain as-is) */
